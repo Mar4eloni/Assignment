@@ -33,3 +33,33 @@
    - Handles both quoted '"Name Surname"' and unquoted formats
    - Properly unescapes special sequences like '\"' and '\\'
    - Preserves parentheses within quoted display names
+
+## Weaknesses and Limitations
+
+### Design Limitations
+
+1. Internationalization:
+   - Doesn't fully support international email adresses
+   - limited handling of utf-8 in the names
+
+2. Edge Cases:
+   - Nat struggle with some obscure RFC 5322 formats
+   - Incomplete handling of nested quoted strings
+3. Error Recovery:
+   - Fails on first error
+
+## Other Comments
+
+### Tradeoffs 
+Choose a strict compliance over leniency
+
+### Future Improvements:
+Implementation of internatiponalization
+Precompiled reges patterns
+Single-pass parsing design
+Support for multiple output formats like XML,CSV ...
+
+## Usage
+
+go build -o email-addr
+./email-addr testdata/emails.txt or ./email-addr <file-name>
