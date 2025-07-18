@@ -44,7 +44,6 @@
    - limited handling of utf-8 in the names
 
 2. Edge Cases:
-   - Nat struggle with some obscure RFC 5322 formats
    - Incomplete handling of nested quoted strings
 3. Error Recovery:
    - Fails on first error
@@ -64,3 +63,7 @@ Support for multiple output formats like XML,CSV ...
 
 go build -o email-addr
 ./email-addr testdata/emails.txt or ./email-addr <file-name>
+
+```bash
+go build -o email-addr
+./email-addr emails.txt
