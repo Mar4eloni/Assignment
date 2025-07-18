@@ -23,7 +23,8 @@
 
 1. Comment Handling:
    - Uses state tracking with 'commentDepth' and 'inQuote' to properly ignore nested comments while preserving quoted text
-   - - Implements 'removeComments()' to strip only unquoted parentheses
+   - Implements 'removeComments()' `removeComments()` to strip only unquoted parentheses
+     
 
 2. Email Extraction:
    - Prioritezes angle-bracket notation but falls back to regex matching
