@@ -22,8 +22,8 @@
 ### Core Solutions
 
 1. Comment Handling:
-   - Uses state tracking with 'commentDepth' and 'inQuote' to properly ignore nested comments while preserving quoted text
-   - Implements 'removeComments()' `removeComments()` to strip only unquoted parentheses
+   - Uses state tracking with `commentDepth` and `inQuote` to properly ignore nested comments while preserving quoted text
+   - Implements `removeComments()` to strip only unquoted parentheses
      
 
 2. Email Extraction:
