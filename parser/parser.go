@@ -50,13 +50,25 @@ func ParseLine(line string) EmailParts {
 
 	addrSpec := extractEmailAddress(line)
 
-	displayName := extractDisplayName(line, addrSpec)
-
 	if addrSpec == "" {
+		// special case check for no other simols in line ex: name test@test.com
+		if parts := strings.Fields(line); len(parts) >= 2 {
+			lastPart := parts[len(parts)-1]
+			if emailRegex.MatchString(lastPart) {
+				addrSpec = lastPart
+				displayName := strings.Join(parts[:len(parts)-1], " ")
+				return EmailParts{
+					AddrSpec:    addrSpec,
+					DisplayName: displayName,
+				}
+			}
+		}
 		return EmailParts{
 			Error: strPtr("no email address found"),
 		}
 	}
+
+	displayName := extractDisplayName(line, addrSpec)
 
 	if !emailRegex.MatchString(addrSpec) {
 		return EmailParts{
@@ -75,15 +87,6 @@ func ParseLine(line string) EmailParts {
 // strPtr returns a pointer to the given string.
 // This is a helper function for creating error message pointers.
 func strPtr(s string) *string { return &s }
-
-// cleanInput prepares the input string for parsing by:
-// - Removing byte order marks
-// - Normalizing whitespace
-func cleanInput(input string) string {
-	// Remove byte order mark and normalize spaces
-	input = strings.TrimPrefix(input, "\ufeff")
-	return strings.Join(strings.Fields(input), " ")
-}
 
 // extractDisplayName extracts the display name from an email string.
 // It handles both quoted ("Name") and unquoted names.
@@ -154,7 +157,7 @@ func unescapeDisplayName(name string) string {
 }
 
 // removeComents strips comments enclosed in paretheses from the input string,
-// except when they appear witthin quoted strings.
+// except when they appear within quoted strings.
 func removeComments(input string) string {
 	var result strings.Builder
 	commentDepth := 0
