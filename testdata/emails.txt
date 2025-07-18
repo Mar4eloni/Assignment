@@ -1,0 +1,18 @@
+"Vogel, Martin" <martin.vogel@sig.com>
+"Peter" (Sally's friend) <peter@pan.com>
+"Peter" <peter@pan.com> (Mary's friend)
+"Peter" <peter@pan.com> (we met @ school)
+Peter <peter@pan.com>
+Peter Pan <peter@pan.com>
+Peter peter@pan.com
+Peter Jackson <peter@pan.com> (Mary's friend)
+"Peter Pan" < info@peter.pan >
+"Embedded quote \" here" <peter@pan.com>
+"Escaped \backspace" <peter@pan.com>
+(Peter) <peter@pan.com>
+(Peter) peter@pan.com
+"Bill G <bill@gates.com>" <peter0312@gmail.com>
+"Bill Gates" (bill@gates.com (a.k.a. billg)) peter0421@gmail.com
+"peter@pan.com" <peter@pan.com>
+"Nested comments" (comment (other comment) more) <peter@pan.com>
+"Peter" (ex-Harvard) <peter@pan.com> (now corp.com's CTO)
