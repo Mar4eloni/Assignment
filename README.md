@@ -11,7 +11,7 @@
 
 2. Component Separation:
    - Cleans input by removing marks and normalizing whitespace
-   - Handles displan names separatley from email addresses
+   - Handles display names separatley from email addresses
    - Processes comments and quoted strings
 
 3. Validation Pipline:
