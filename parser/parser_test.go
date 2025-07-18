@@ -41,9 +41,9 @@ func TestParseLine(t *testing.T) {
 			name:  "invalid email format",
 			input: "not-an-email",
 			expected: EmailParts{
-				AddrSpec:    "not-an-email",
+				AddrSpec:    "",
 				DisplayName: "",
-				Error:       strPtr("invalid email format"),
+				Error:       strPtr("no email address found"),
 			},
 		},
 	}

@@ -11,7 +11,7 @@ import (
 // usage prints the correct command usage to stderr
 func usage() {
 	fmt.Fprintf(os.Stderr, "Usage: %s <filename>\n", os.Args[0])
-	fmt.Println(os.Stderr, "<Filename> Path to file containing email addresses to parse")
+	fmt.Fprintf(os.Stderr, "  <filename>  Path to file containing email addresses to parse\n")
 }
 
 // main is the entry point that handles:
