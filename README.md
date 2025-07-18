@@ -61,9 +61,7 @@ Support for multiple output formats like XML,CSV ...
 
 ## Usage
 
-go build -o email-addr
-./email-addr testdata/emails.txt or ./email-addr <file-name>
-
 ```bash
 go build -o email-addr
-./email-addr emails.txt
+./email-addr testdata/emails.txt
+./email-addr <file-name>
